@@ -1,0 +1,8 @@
+main: server.alanbecker.net.Main
+name: ABMCWorldBorder
+version: 1
+api-version: 1.19
+folia-supported: true
+commands:
+  abmcborder:
+    description: "Controls the Minecraft world border."
