@@ -45,12 +45,12 @@ public class Main extends JavaPlugin {
                 return true;
             }
             if (args[0].equalsIgnoreCase("set")) {
-                if (args.length < 3) {
-                    sender.sendMessage(ChatColor.RED + "Usage: /abmcborder set <size> [time] [world]");
+                if (args.length < 4) {
+                    sender.sendMessage(ChatColor.RED + "Usage: /abmcborder set <size> [time] <world>");
                     return true;
                 }
                 double size = Double.parseDouble(args[1]);
-                int time = args.length > 3 ? Integer.parseInt(args[2]) : 0;
+                int time = args.length > 2 ? Integer.parseInt(args[2]) : 0;
                 World world = Bukkit.getWorld(args[3]);
                 if (world == null) {
                     sender.sendMessage(ChatColor.RED + "World not found.");
@@ -61,13 +61,13 @@ public class Main extends JavaPlugin {
                 return true;
             }
             if (args[0].equalsIgnoreCase("add")) {
-                if (args.length < 3) {
-                    sender.sendMessage(ChatColor.RED + "Usage: /abmcborder add <size> [time] [world]");
+                if (args.length < 4) {
+                    sender.sendMessage(ChatColor.RED + "Usage: /abmcborder add <size> [time] <world>");
                     return true;
                 }
                 double size = Double.parseDouble(args[1]);
-                int time = args.length > 3 ? Integer.parseInt(args[3]) : 0;
-                World world = Bukkit.getWorld(args[2]);
+                int time = args.length > 2 ? Integer.parseInt(args[2]) : 0;
+                World world = Bukkit.getWorld(args[3]);
                 if (world == null) {
                     sender.sendMessage(ChatColor.RED + "World not found.");
                     return true;
@@ -77,8 +77,8 @@ public class Main extends JavaPlugin {
                 return true;
             }
             if (args[0].equalsIgnoreCase("warning")) {
-                if (args.length < 2) {
-                    sender.sendMessage(ChatColor.RED + "Usage: /abmcborder warning <distance> [world]");
+                if (args.length < 3) {
+                    sender.sendMessage(ChatColor.RED + "Usage: /abmcborder warning <distance> <world>");
                     return true;
                 }
                 int distance = Integer.parseInt(args[1]);
@@ -100,4 +100,3 @@ public class Main extends JavaPlugin {
         return false;
     }
 }
- 
